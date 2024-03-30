@@ -1,0 +1,65 @@
+<div class="text-center">
+   <h2>Current Weather</h2>
+   <span>Please enter a city Name</span>
+   <br />
+   <input [(ngModel)]="city" />
+   <br /><br />
+   <button (click)="getWeatherData(city)">Load Weather</button>
+   <div class="table-responsive" *ngIf="wData">
+      <table class="mx-auto w-auto">
+         <th></th>
+         <tr class="text-left">
+            <td>Country: </td>
+            <td> {{wData.location.country  }}</td>
+         </tr>
+         <tr>
+            <td>City: </td>
+            <td> {{wData.location.name  }}</td>
+         </tr>
+         <tr>
+            <td>Feels Like (c): </td>
+            <td> {{wData.current.feelslike_c  }}</td>
+         </tr>
+         <tr>
+            <td>Feels Like (f): </td>
+            <td>{{wData.current.feelslike_f}}</td>
+         </tr>
+         <tr>
+            <td>Gust (kmph)</td>
+            <td>{{wData.current.gust_kph}}</td>
+         </tr>
+         <tr>
+            <td>Gust (mph)</td>
+            <td>{{wData.current.gust_mph}}</td>
+         </tr>
+         <tr>
+            <td>Humidity</td>
+            <td>{{wData.current.humidity}}</td>
+         </tr>
+         <tr>
+            <td>Last Updated On</td>
+            <td>{{wData.current.last_updated}}</td>
+         </tr>
+         <tr>
+            <td>Pressure (inch)</td>
+            <td>{{wData.current.pressure_in}}</td>
+         </tr>
+         <tr>
+            <td>Pressure (mb)</td>
+            <td>{{wData.current.pressure_mb}}</td>
+         </tr>
+         <tr>
+            <td>Temperature (c)</td>
+            <td>{{wData.current.temp_c}}</td>
+         </tr>
+         <tr>
+            <td>Temperature (f)</td>
+            <td>{{wData.current.temp_f}}</td>
+         </tr>
+         <tr>
+            <td>Wind Direction</td>
+            <td>{{wData.current.wind_dir}}</td>
+         </tr>
+      </table>
+   </div>
+</div>
